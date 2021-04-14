@@ -1,0 +1,45 @@
+ssh 08615f65-bacb-4d06-972a-96b5d14afb8c@serverhub.praktikum-services.ru -p 4554
+ssh 1ef9d87c-200a-41bd-8f5a-a7b15808ac51@serverhub.praktikum-services.ru -p 4554
+cat ~/.ssh/id_rsa.pub
+ssh f9ceba3f-ebad-4f15-81d5-cf6d2ad0a616@serverhub.praktikum-services.ru -p 4554
+ssh-keygen
+ssh d1bcd773-c7da-4fca-becb-a92b13bd22da@serverhub.praktikum-services.ru -p 4554
+
+\c yandex_sql_books
+
+INSERT INTO 
+  books
+(id,name,genre,author,date_pub,pages,price,rating)
+VALUES  
+ (17, 'Евгений Онегин',1,'Александр Пушкин','1832-01-01',736,330,4.7); 
+ INSERT INTO author (id,AUTHOR) VALUES (19, Mihail Bulgakov);
+ pg_dump имя_базы_данных > путь_и_имя_файла_дампа
+ pg_dump -t имя_таблицы1 -t имя_таблицы2 ... имя_базы_данных > путь_и_имя_файла_дампа
+ pg_dump yandex_sql_books > yandex_base
+ createdb -T template0 rick
+ psql rick<yandex_base
+
+ ssh 73a6bacf-26d6-4eb8-9a49-89726513c493@serverhub.praktikum-services.ru -p 4554
+ grep -rn "3./12/2019:21:3.:.." ~/logs/2019/12
+grep -rn "3./12/2019:21:3.:.." ~/logs/2019/12 > ~/bug1/main.txt
+grep "400.....$" ~/bug1/main.txt > ~/bug1/events/400.txt
+grep "500.....$" ~/bug1/main.txt > ~/bug1/events/500.txt
+ select count (cab_id) from cabs;
+ chicago_taxi-# 
+ SELECT company_name, COUNT(company_name) AS cnt FROM cabs GROUP BY company_name HAVING COUNT(company_name) <100 ORDER BY cnt DESC;
+ SELECT ts, CASE WHEN description LIKE '%rain%' OR description LIKE '%storm%' THEN 'Bad' ELSE 'Good'  END AS weather_conditions FROM weather_records WHERE ts >= '2017-11-05 00:00:00' AND ts <= '2017-11-06 00:00:00';
+ SELECT
+company_name,
+COUNT(company_name) AS trips_amount
+ FROM
+cabs
+ INNER JOIN trips ON trips.cab_id = cabs.cab_id
+WHERE trips.start_ts >= '2017-11-15 00:00*' AND trips.start_ts <= '2017-11-16 00:00*'
+GROUP BY 
+trips_amount
+ORDER BY
+trips_amount 
+ DESC;
+
+  SELECT cabs.company_name, COUNT(cabs.company_name) AS trips_amount FROM cabs INNER JOIN trips ON trips.cab_id=cabs.cab_id WHERE trips.start_ts >= '2017-11-15 00:00:00' AND trips.start_ts <= '2017-11-16 23:59:59' GROUP BY cabs.company_name ORDER BY trips_amount DESC;
+  https://github.com/dendavydov75/yandex.practicum.git
